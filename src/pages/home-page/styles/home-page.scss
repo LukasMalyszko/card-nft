@@ -4,12 +4,12 @@
 @import "/src/global-styles/styles/root.scss";
 
 body {
-    background: var(--background-color);
+    background: var(--color-dark);
 }
 .container {
     display: flex;
     justify-content: center;
-    font-family: var(--font-family-basic);
+    font-family: var(--font-manrope);
 }
 
   .component-card {
@@ -18,14 +18,15 @@ body {
     position: relative; 
     margin: 15% 2%;
     width: 413px;
-    height: 556px;
-    background-color: var(--color-kart);
-    color: var(--text-basic-color);
+    max-height: 556px;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
     border-radius: 20px;
-  
+    
     & &__description {
-      position: absolute;
-      top: 252px;
+      position: relative;
+
+      top: -147px;
       margin: 0 32px;
       width: -webkit-fill-available;
     }
@@ -33,7 +34,7 @@ body {
       display: flex;
       flex-direction: column;
       gap: 24px;
-      width: 278px;
+      max-width: 278px;
     }
 
     & &__title {
@@ -52,12 +53,14 @@ body {
       font-size: 18px;
       line-height: 160%;
       letter-spacing: -0.01em;
-      color: var(--text-content-color);
+      color: var(--color-gray);
     }
     
     & &__image img{
+      position: relative;
+      max-width: 413px;
       border-radius: 20px;
-      width: 413px;
+      max-width: 413px;
     }
     
     & &__info {
@@ -68,34 +71,36 @@ body {
     }
     
     & &__price {
-      color: var(--color-ETH);
+      display: flex;
+      color: var(--color-light-blue);
       font-size: 18px;
       font-weight: 700;
       line-height: 29px;
       & img {
-        width: 20px;
-        margin-right: 10px;
-        vertical-align: sub;
+        object-fit: contain;
+        width: 18px;
+        margin-right: 14px;
       }
     }
     
     & &__time {
-      color: var(--text-content-color);
+      display: flex;
+      color: var(--color-gray);
       font-weight: 500;
       font-size: 16px;
       line-height: 26px;
       letter-spacing: -0.01em;
-        padding-top: 2px;
-        img {
-          width: 16.5px;
+      padding-top: 2px;
+      img {
+          object-fit: contain;
+          width: 17px;
           margin-right: 10px;
-          vertical-align: middle;
       }
     }
       
     & &__footer {
       display: flex;
-      color: var(--text-content-color);
+      color: var(--color-gray);
       font-weight: 500;
       font-size: 16px;
       line-height: 26px;
@@ -108,7 +113,7 @@ body {
         margin: auto 16px auto 0;
       }
       & a {
-        color: var(--text-basic-color);
+        color: var(--color-white);
         font-weight: 600;
         text-decoration: none;
       }
@@ -119,7 +124,7 @@ body {
     
     @media (max-width: 834px){
       width: 343px;
-      height: 486px;
+      max-height: 486px;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -130,25 +135,25 @@ body {
       }
       & &__description {
         margin: 0 24px;
-        top: 229px;
+        top: -175px;
       } 
       & &__header {
         gap: 16px;
       }
       
       & &__info {
-          margin: 24px 0 21px;
+          margin: 25px 0 21px;
       }
 
       & &__price {
           font-size: 16px;
-          line-height: 25.6px;
+          line-height: 25px;
       }
       
       & &__time {
           font-size: 14px;
           line-height: 22px;
-          margin-right: 9px;
+          margin-right: 10px;
       }
       
       & &__footer {
@@ -158,7 +163,7 @@ body {
     }
     @media(max-width: 375px){
       & &__info {
-        margin: 25px auto 20px;
+        margin: 25px 0 20px;
       }
     }
 }
